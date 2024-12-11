@@ -187,9 +187,15 @@ internvl_series = {
     'InternVL2-1B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-1B', version='V2.0'),
     'InternVL2-2B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-2B', version='V2.0'),
     'InternVL2-4B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-4B', version='V2.0'),
-    'InternVL2-8B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-8B', version='V2.0'),
+    'InternVL2-8B': partial(
+        InternVLChat,
+        model_path='/cpfs01/shared/public/dhd/hub/models--OpenGVLab--InternVL2-8B/snapshots/c527cd3717f4bb8339002b342bc9476ec0485004',
+        version='V2.0',
+    ),
     'InternVL2-8B-MPO': partial(InternVLChat, model_path='OpenGVLab/InternVL2-8B-MPO', version='V2.0'),
-    'InternVL2-8B-MPO-CoT': partial(InternVLChat, model_path='OpenGVLab/InternVL2-8B-MPO', version='V2.0', cot_prompt=True),
+    'InternVL2-8B-MPO-CoT': partial(
+        InternVLChat, model_path='OpenGVLab/InternVL2-8B-MPO', version='V2.0', cot_prompt=True
+    ),
     'InternVL2-26B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-26B', version='V2.0'),
     'InternVL2-40B': partial(
         InternVLChat, model_path='OpenGVLab/InternVL2-40B', version='V2.0', load_in_8bit=True
@@ -398,4 +404,3 @@ model_groups = [
 
 for grp in model_groups:
     supported_VLM.update(grp)
-

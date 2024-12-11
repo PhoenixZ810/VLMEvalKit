@@ -1,5 +1,4 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers import QuantoConfig
 import torch
 from .base import BaseModel
 from ..dataset import DATASET_TYPE
@@ -22,6 +21,8 @@ class POINTSV15(BaseModel):
     """
 
     def __init__(self, model_path: str, **kwargs) -> None:
+        from transformers import QuantoConfig
+
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_path, trust_remote_code=True)
         quant_config = QuantoConfig(modules_to_not_convert=['vision_encoder'])

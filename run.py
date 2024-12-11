@@ -331,7 +331,18 @@ def main():
                         judge_kwargs['model'] = 'gpt-4-turbo'
                     elif listinstr(['MathVista', 'MathVerse', 'MathVision', 'DynaMath'], dataset_name):
                         judge_kwargs['model'] = 'gpt-4o-mini'
-                    elif listinstr(['MMLongBench', 'MMDU', 'DUDE', 'SLIDEVQA', 'MIA-Bench', 'WildVision'], dataset_name):  # noqa: E501
+                    elif listinstr(
+                        [
+                            'MMLongBench',
+                            'MMDU',
+                            'DUDE',
+                            'SLIDEVQA',
+                            'MIA-Bench',
+                            'WildVision',
+                            'SubjectiveBench',
+                        ],
+                        dataset_name,
+                    ):  # noqa: E501
                         judge_kwargs['model'] = 'gpt-4o'
 
                 if rank == 0:

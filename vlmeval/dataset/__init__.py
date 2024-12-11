@@ -31,6 +31,7 @@ from .mmgenbench import MMGenBench
 
 from .miabench import MIABench
 from .wildvision import WildVision
+from .subjectivebench import SubjectiveBench
 from .mmmath import MMMath
 from .dynamath import Dynamath
 from .utils import *
@@ -128,7 +129,7 @@ IMAGE_DATASET = [
     MMMUDataset, OCRBench, MathVista, LLaVABench, MMVet, MTVQADataset, TableVQABench,
     MMLongBench, VCRDataset, MMDUDataset, DUDE, SlideVQA, MUIRDataset,
     GMAIMMBenchDataset, MMERealWorld, HRBenchDataset, CRPE, MathVerse, NaturalBenchDataset,
-    MIABench, OlympiadBench, WildVision, MMMath, QSpatial, Dynamath, MMGenBench, VizWiz, MMNIAH
+    MIABench, OlympiadBench, WildVision, MMMath, QSpatial, Dynamath, MMGenBench, VizWiz, MMNIAH, SubjectiveBench
 ]
 
 VIDEO_DATASET = [
