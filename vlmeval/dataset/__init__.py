@@ -30,11 +30,13 @@ from .video_concat_dataset import ConcatVideoDataset
 from .mmgenbench import MMGenBench
 
 from .miabench import MIABench
+from .cmmmu import CMMMU
 from .wildvision import WildVision
 from .subjectivebench import SubjectiveBench
 from .mmmath import MMMath
 from .dynamath import Dynamath
 from .utils import *
+from .video_dataset_config import *
 from ..smp import *
 
 
@@ -129,7 +131,8 @@ IMAGE_DATASET = [
     MMMUDataset, OCRBench, MathVista, LLaVABench, MMVet, MTVQADataset, TableVQABench,
     MMLongBench, VCRDataset, MMDUDataset, DUDE, SlideVQA, MUIRDataset,
     GMAIMMBenchDataset, MMERealWorld, HRBenchDataset, CRPE, MathVerse, NaturalBenchDataset,
-    MIABench, OlympiadBench, WildVision, MMMath, QSpatial, Dynamath, MMGenBench, VizWiz, MMNIAH, SubjectiveBench
+    MIABench, OlympiadBench, WildVision, MMMath, QSpatial, Dynamath, MMGenBench, VizWiz, MMNIAH, SubjectiveBench,
+    CMMMU
 ]
 
 VIDEO_DATASET = [
@@ -197,7 +200,9 @@ def DATASET_MODALITY(dataset, *, default: str = 'IMAGE') -> str:
 
 def build_dataset(dataset_name, **kwargs):
     for cls in DATASET_CLASSES:
-        if dataset_name in cls.supported_datasets():
+        if dataset_name in supported_video_datasets:
+            return supported_video_datasets[dataset_name](**kwargs)
+        elif dataset_name in cls.supported_datasets():
             return cls(dataset=dataset_name, **kwargs)
 
     warnings.warn(f'Dataset {dataset_name} is not officially supported. ')
