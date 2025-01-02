@@ -424,6 +424,10 @@ valley_series = {
     'valley_eagle': partial(ValleyEagleChat, model_path='bytedance-research/Valley-Eagle-7B'),
 }
 
+wings_qwen = {
+    'Wings-Qwen': partial(Wings, model_path='AIDC-AI/Wings-Qwen1_5-8B'),
+}
+
 supported_VLM = {}
 
 model_groups = [
@@ -435,7 +439,7 @@ model_groups = [
     mantis_series, mmalaya_series, phi3_series, xgen_mm_series, qwen2vl_series,
     slime_series, eagle_series, moondream_series, llama_series, molmo_series,
     kosmos_series, points_series, nvlm_series, vintern_series, h2ovl_series, aria_series,
-    smolvlm_series, sail_series, valley_series, vita_series
+    smolvlm_series, sail_series, valley_series, vita_series, wings_qwen
 ]
 
 for grp in model_groups:
